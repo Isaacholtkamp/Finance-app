@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>My First Web Page!</title>
+  </head>
+  <body>
+    <h1>Hello World!</h1>
+	
+	<p id="demo" onclick="postData("MSFT")">Click for demo action.</p>
+	
+	<script>
+		function postData(input) {
+			$.ajax({
+				type: "POST",
+				url: "/learn_scraping1.py",
+				data: { param: input },
+				success: callbackFunc
+			});
+		}
+		function callbackFunc(response) {
+			// do something with the response
+			console.log(response);
+		}
+	</script>	
+	
+  </body>
+</html>
